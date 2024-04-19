@@ -27,11 +27,12 @@ const images = [
 
 const list = document.querySelector('.gallery');
 
+let markUp = '';
+
 images.forEach(image => {
-  list.insertAdjacentHTML(
-    'beforeend',
-    `<li class="item">
+  markUp += `<li class="item">
       <img class="image" src="${image.url}" alt="${image.alt}">
-    </li>`
-  );
+    </li>`;
 });
+
+list.insertAdjacentHTML('beforeend', markUp);
